@@ -1,32 +1,46 @@
 # Barcode Studio
 
-A lightweight Windows desktop app with three pages in one window:
-- Home: choose Generator or Scanner
-- Generator: create Code 128 barcodes and save PNG files
-- Scanner: scan barcode images or use a webcam
+A simple desktop app to create and scan barcodes, built with Python and Tkinter.
 
-## Requirements
-- Python 3.10 or newer recommended
-- Windows, macOS, or Linux
-- A webcam for live scanning
+## Features
 
-## Setup (Windows)
-1. Extract the project folder.
-2. Open PowerShell or CMD in the folder.
-3. Create and activate a virtual environment:
+- Generate Code 128 barcodes and save them as PNG
+- Scan barcodes from an image
+- Scan barcodes live with your webcam
 
-   python -m venv .venv
-   .venv\\Scripts\\activate
+## Installation
 
-4. Install dependencies:
+1. Install dependencies:
 
-   python -m pip install -r requirements.txt
+```bash
+pip install python-barcode pillow opencv-python zxing-cpp numpy
+```
 
-5. Run:
+2. Run the app:
 
-   python main.py
+```bash
+python main.py
+```
 
-## Notes
-- The generator currently creates Code 128 barcodes.
-- The scanner uses ZXing-C++, which supports common 1D barcode formats.
-- Webcam scanning uses OpenCV. If the camera does not open, check Windows camera privacy permissions and close other apps using the camera.
+## Usage
+
+**Generator:** type your text, click **Generate**, then **Save PNG**.
+
+**Scanner:** click **Upload Image** or **Start Webcam**. The result appears in the box, and you can copy it with **Copy**.
+
+<details>
+<summary><b>📷 Webcam not opening / Camera permission errors</b></summary>
+
+1. Close other applications using the camera (e.g., Zoom, Teams, Chrome).
+2. Restart the script or application.
+
+</details>
+
+<details>
+<summary><b>🔍 No barcode detected in image</b></summary>
+
+- Ensure the image is well-lit and not blurry.
+- Make sure the entire barcode is visible and uncropped.
+- Try lowering image resolution if processing large high-DPI images.
+
+</details>
