@@ -1,4 +1,0 @@
-python-barcode
-Pillow
-opencv-python
-zxing-cpp
